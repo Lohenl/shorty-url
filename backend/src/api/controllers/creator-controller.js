@@ -1,4 +1,7 @@
+const moment = require('moment');
 const { createLogger } = require('../../utils/logger');
+const ShortyUrl = require('../../data/models/ShortyUrl');
+const shortyConfig = require('../../../cfg/shorty-configs.json')
 
 const logger = createLogger('creator-controller');
 
@@ -7,11 +10,30 @@ async function createUrl(req, res) {
   try {
     const longUrl = req.body.longurl;
     logger.info(`createShortUrl() - url: ${longUrl}`);
-    // TODO: create here
+    
+    // define new entry
+    const newUrl = new ShortyUrl({
+      shortUrl: createShortUrl(longUrl),
+      longUrl, 
+      expiresAt: moment(Date.now).add(shortyConfig.shortUrlDefaultTTLInSeconds, 's').toDate()
+    })
+
+    // save to repo
+    newUrl
+      .save()
+      .then(doc => {logger.info(doc)})
+      .catch(error => { logger.error(error) })
+
   } catch (error) {
     logger.error('Error creating short url: ', error);
     res.status(500).send(error.message);
   }
+}
+
+function createShortUrl(longUrl) {
+  //TODO: short url creation
+  // reference: https://www.youtube.com/watch?v=JQDHz72OA3c&ab_channel=TechDummiesNarendraL
+  return longUrl;
 }
 
 // gets metadata for url
