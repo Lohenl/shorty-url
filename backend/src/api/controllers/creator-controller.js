@@ -25,7 +25,7 @@ async function createUrl(req, res) {
       .save()
       .then((doc) => {
         logger.info(`Saved to db: ${JSON.stringify(doc)}`);
-        res.status(200).send(newUrl.shortUrl);
+        res.status(200).send({ shortUrl: newUrl.shortUrl });
       });
   } catch (error) {
     logger.error('Error creating short url: ', error);

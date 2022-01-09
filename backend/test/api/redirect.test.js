@@ -24,7 +24,7 @@ describe('api/redirect.test.js', () => {
         longurl: 'http://shortyexample.com',
       })
       .then((res) => {
-        shortUrl = res.text;
+        shortUrl = res.body.shortUrl;
         expect(res).to.have.status(200);
       }));
 

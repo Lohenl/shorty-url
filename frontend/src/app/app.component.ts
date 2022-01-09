@@ -8,6 +8,8 @@ import {
   transition,
   trigger
 } from "@angular/animations";
+import { ShortyService } from './service/shorty.service';
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -78,7 +80,10 @@ import {
 })
 export class AppComponent {
 
-  constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(
+    private primengConfig: PrimeNGConfig, 
+    private shortyService: ShortyService
+  ) {}
 
   ngOnInit() {
     this.primengConfig.ripple = true;
@@ -88,6 +93,9 @@ export class AppComponent {
   shortUrl = new FormControl('');
 
   getUrl() {
-    this.longUrl.setValue('Trololol');
+    this.shortyService.getShortenedUrl(this.longUrl.value)
+      .subscribe((resp: any) => {
+        this.shortUrl.setValue(`${environment.backendHost}${resp.shortUrl}`);
+      });
   }
 }

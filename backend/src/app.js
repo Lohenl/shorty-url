@@ -15,6 +15,12 @@ const app = express();
 
 logger.info('Starting Shorty Backend');
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // not great for prod lol
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 app.use(morganLogger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
