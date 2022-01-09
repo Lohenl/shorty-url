@@ -39,7 +39,7 @@ a simple web url shortener webstack
 - 0.2 extras
 - [ ] 0.2fe1 frontend scaffold
 - [x] 0.2be1 data tier
-- [ ] 0.2be2 test suite
+- [x] 0.2be2 test suite
 - [ ] 0.2be3 githook lint and test
 - [ ] 0.2fs1 dockerize
 - [ ] 0.2fs2 frontend integration
