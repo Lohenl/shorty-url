@@ -39,4 +39,4 @@ a simple web url shortener webstack
 - 0.3 deployment
 - [x] 0.3de1 backend dockerization
 - [x] 0.3de2 frontend dockerization
-- [ ] actual deployment
+- [x] actual deployment
