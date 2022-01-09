@@ -14,8 +14,6 @@ a simple web url shortener webstack
 - devops
     - backend/frontend localized unit testing
     - local fullstack deployment with docker + docker-compose
-    - husky precommit hooks
-    - aws terraform (2 flavors, ECS/Lambda, if I have the time)
 
 
 ## todo
@@ -41,4 +39,4 @@ a simple web url shortener webstack
 - 0.3 deployment
 - [x] 0.3de1 backend dockerization
 - [x] 0.3de2 frontend dockerization
-- [ ] 0.3de3 mongodb secret integration
+- [ ] actual deployment
