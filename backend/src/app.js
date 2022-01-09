@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const morganLogger = require('morgan');
 const { createLogger } = require('./utils/logger');
@@ -18,6 +19,7 @@ app.use(morganLogger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(helmet());
 
 logger.info('Middleware ready');
 

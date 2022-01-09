@@ -13,6 +13,9 @@ async function performRedirect(req, res) {
     ShortyUrl.findOne({ shortUrl: url })
       .then((doc) => {
         logger.info(`Result: ${JSON.stringify(doc)}`);
+        if (!doc) {
+          throw new Error('No matching url found');
+        }
         res.redirect(doc.longUrl);
       })
       .catch((err) => {

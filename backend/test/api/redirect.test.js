@@ -4,7 +4,7 @@ const nock = require('nock');
 const { expect } = require('chai');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../../src/app');
+const { app } = require('../index.test');
 
 chai.use(chaiHttp);
 
@@ -14,10 +14,22 @@ nock('http://shortyexample.com')
   .reply(200, 'Successful Redirection');
 
 describe('api/redirect.test.js', () => {
-  describe('#performRedirect(res, res, next)', () => {
+  describe('#performRedirect(req, res)', () => {
+    let shortUrl;
+
+    it('should create a short url', () => chai.request(app)
+      .post('/creator/url')
+      .type('form')
+      .send({
+        longurl: 'http://shortyexample.com',
+      })
+      .then((res) => {
+        shortUrl = res.text;
+        expect(res).to.have.status(200);
+      }));
+
     it('should be redirected to http://shortyexample.com', () => chai.request(app)
-    // data seed: "sdflkjns123:'http://shortyexample.com'"
-      .get('/sdflkjns123')
+      .get(`/${shortUrl}`)
       .then((res) => {
         expect(res).to.have.status(200);
       }));
