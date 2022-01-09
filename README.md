@@ -25,9 +25,7 @@ a simple web url shortener webstack
 - [x] basics breakdown
 - [x] extras breakdown
 - [x] basics
-- [ ] extras
-- [ ] manual deploy
-- [ ] deploy
+- [x] extras
 
 ## planned releases
 
@@ -39,9 +37,4 @@ a simple web url shortener webstack
 - [x] 0.2fe1 frontend scaffold
 - [x] 0.2be1 data tier
 - [x] 0.2be2 test suite
-- [ ] 0.2fs1 dockerize
-- [ ] 0.2fs2 frontend integration
-- 0.3 deploy
-- [ ] 0.2f1 aws TF ECS
-- [ ] 0.2f2 aws lambda
-- 1.0 release
+- [x] 0.2fs2 frontend integration
