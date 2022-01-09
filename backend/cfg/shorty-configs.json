@@ -1,6 +1,6 @@
 {
     "longUrlMaxCharLength": "2048",
-    "shortUrlMinNoOfBytes": "17",
+    "shortUrlNoOfChars": "10",
     "shortUrlDefaultMinTTLInSeconds": "300",
     "shortUrlDefaultMaxTTLInSeconds": "3156000",
     "shortUrlDefaultTTLInSeconds": "3156000"

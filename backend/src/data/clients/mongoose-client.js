@@ -12,5 +12,7 @@ db.once('open', () => {
 });
 
 db.on('error', (err) => {
-  logger.error('connection error:', err);
+  logger.error('Connection error:', err);
 });
+
+module.exports = mongoose;

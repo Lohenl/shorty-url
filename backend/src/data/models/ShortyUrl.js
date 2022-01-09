@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../clients/mongoose-client');
 
 const { Schema } = mongoose;
 
@@ -8,7 +8,6 @@ const shortyUrlSchema = new Schema({
   shortUrl: { type: String, unique: true },
   longUrl: String,
   createdAt: { type: Date, default: Date.now },
-  expiresAt: Date, // not sure if this is needed, might just use TTL
 });
 
 module.exports = mongoose.model('ShortyUrl', shortyUrlSchema);
