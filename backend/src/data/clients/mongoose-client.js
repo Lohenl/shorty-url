@@ -4,7 +4,7 @@ const { createLogger } = require('../../utils/logger');
 const logger = createLogger('mongoose-client');
 
 if (!process.env.IS_LOCAL_TEST && process.env.IS_LOCAL_TEST !== 'true') {
-  const url = `mongodb://${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/${process.env.MONGODB_COLLECTION_NAME}`;
+  const url = process.env.MONGODB_URL;
 
   mongoose.connect(url, { useNewUrlParser: true });
   const db = mongoose.connection;
