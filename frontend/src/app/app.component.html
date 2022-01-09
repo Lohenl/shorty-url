@@ -1,11 +1,17 @@
-<label for="name">Enter URL: </label>
-<input id="longUrl" type="text" [formControl]="longUrl">
-
-<p>Value: {{ longUrl.value }}</p>
-
-<button (click)="getUrl()">Get Shortened URL!</button>
-
-<label for="name">Shortened URL: </label>
-<input id="shortUrl" type="text" [formControl]="shortUrl">
-
-<p>Value: {{ shortUrl.value }}</p>
+<div class="p-grid p-flex-column">
+    <div class="p-fluid">
+        <span class="p-float-label">
+            <input id="longUrl" type="text" pInputText [formControl]="longUrl"> 
+            <label for="float-input">Enter your URL here!</label>
+        </span>
+    </div>
+    <div class="p-fluid">
+        <p-button (click)="getUrl()" label="Get Shortened URL!"></p-button>
+    </div>
+    <div class="p-fluid">
+        <span class="p-float-label">
+            <input id="longUrl" type="text" pInputText [disabled]=true [formControl]="shortUrl"> 
+            <label for="float-input">Shortened URL shows up here!</label>
+        </span>
+    </div>
+  </div>
