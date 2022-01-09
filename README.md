@@ -9,7 +9,6 @@ a simple web url shortener webstack
 - backend
     - express
     - helmet
-    - mongoose with redis
 - persistence
     - mongodb
 - devops
