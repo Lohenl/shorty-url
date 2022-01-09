@@ -36,7 +36,7 @@ a simple web url shortener webstack
 - [x] 0.1be2 creator features
 - [x] 0.1be3 consumer features
 - 0.2 extras
-- [ ] 0.2fe1 frontend scaffold
+- [x] 0.2fe1 frontend scaffold
 - [x] 0.2be1 data tier
 - [x] 0.2be2 test suite
 - [ ] 0.2fs1 dockerize
