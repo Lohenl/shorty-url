@@ -3,9 +3,6 @@ services:
   mongo:
     image: mongo
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - "27017:27017"
   frontend:
@@ -14,10 +11,6 @@ services:
       - "80:80"
   backend:
     image: lohenl/shorty-be
-    environment:
-      - MONGO_PROD="true"
-      - MONGO_USER="root"
-      - MONGO_PASSWORD="example"
     ports:
       - "8080:8080"
     command: [ "npm", "run", "start" ]
