@@ -34,7 +34,7 @@ a simple web url shortener webstack
 
 - 0.1 basics
 - [x] 0.1be1 framework scaffold
-- [ ] 0.1be2 creator features
+- [x] 0.1be2 creator features
 - [ ] 0.1be3 consumer features
 - 0.2 extras
 - [ ] 0.2fe1 frontend scaffold
