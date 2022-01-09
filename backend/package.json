@@ -6,6 +6,7 @@
     "clean": "npx rimraf .nyc_output coverage",
     "start": "node -r dotenv/config bin/www dotenv_config_path=./env/prod.env",
     "local": "node -r dotenv/config bin/www dotenv_config_path=./env/local.env",
+    "local-compose": "node -r dotenv/config bin/www dotenv_config_path=./env/local-compose.env",
     "test": "nyc mocha --timeout 120000 'test/index.test.js' 'test/*/*.js' --exit"
   },
   "dependencies": {

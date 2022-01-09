@@ -39,6 +39,6 @@ a simple web url shortener webstack
 - [x] 0.2be2 test suite
 - [x] 0.2fs2 frontend integration
 - 0.3 deployment
-- [ ] 0.3de1 backend dockerization
-- [ ] 0.3de2 frontend dockerization
+- [x] 0.3de1 backend dockerization
+- [x] 0.3de2 frontend dockerization
 - [ ] 0.3de3 mongodb secret integration
