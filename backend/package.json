@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "npx rimraf .nyc_output coverage postman/dast-output",
+    "clean": "npx rimraf .nyc_output coverage",
     "start": "node ./bin/www",
     "local": "node -r dotenv/config bin/www dotenv_config_path=./env/local.env",
     "test": "nyc mocha 'test/index.test.js' 'test/*/*.js' --exit"
