@@ -25,7 +25,7 @@ a simple web url shortener webstack
 - [x] frameworks
 - [x] basics breakdown
 - [x] extras breakdown
-- [ ] basics
+- [x] basics
 - [ ] extras
 - [ ] manual deploy
 - [ ] deploy
