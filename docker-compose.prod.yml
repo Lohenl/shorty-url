@@ -4,12 +4,9 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-  frontend:
-    network_mode: "host"
   backend:
-    network_mode: "host"
     command: [ "npm", "run", "start" ]
     environment:
       - MONGO_PROD="true"
-      - MONGO_USER="user placeholder, please use separate yml on a CLI"
-      - MONGO_PASSWORD="password placeholder, please use separate yml on a CLI"
+      - MONGO_USER="root"
+      - MONGO_PASSWORD="example"
