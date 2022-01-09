@@ -8,7 +8,7 @@ async function performRedirect(req, res) {
     const { url } = req.params;
     logger.info(`getLongUrl() - url: ${url}`);
     // TODO: retrieval here
-    res.redirect('http://shortyexample.com')
+    res.redirect('http://shortyexample.com');
   } catch (error) {
     // TODO: error handling here
     res.status(500).send(error.message);

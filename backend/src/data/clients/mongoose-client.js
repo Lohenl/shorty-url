@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
-const url = 'mongodb://127.0.0.1:27017/shorty-urls'
+const { createLogger } = require('../../utils/logger');
 
-mongoose.connect(url, { useNewUrlParser: true })
-const db = mongoose.connection
-db.once('open', _ => {
-  console.log('Database connected:', url)
-})
+const logger = createLogger('mongoose-client');
 
-db.on('error', err => {
-  console.error('connection error:', err)
-})
+const url = `mongodb://${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/${process.env.MONGODB_COLLECTION_NAME}`;
+
+mongoose.connect(url, { useNewUrlParser: true });
+const db = mongoose.connection;
+db.once('open', () => {
+  logger.info('Database connected:', url);
+});
+
+db.on('error', (err) => {
+  logger.error('connection error:', err);
+});

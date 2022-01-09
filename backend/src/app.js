@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const morganLogger = require('morgan');
-const { createLogger } = require('../src/utils/logger');
+const { createLogger } = require('./utils/logger');
 
 const indexRouter = require('./api/routes/index');
 const creatorRouter = require('./api/routes/creator');
