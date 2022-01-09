@@ -3,13 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
-    "start": "node ./bin/www"
-=======
     "clean": "npx rimraf .nyc_output coverage postman/dast-output",
     "start": "node ./bin/www",
     "test": "nyc mocha 'test/index.test.js' 'test/*/*.js' --exit"
->>>>>>> 70de4c11e13a1e20a995935e2f7bf90e50bf6b8f
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
